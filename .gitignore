@@ -1,0 +1,3 @@
+scripts/last_watered
+scripts/__pycache__/*
+.vscode/

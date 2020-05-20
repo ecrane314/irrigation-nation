@@ -1,0 +1,5 @@
+
+
+https://desertbot.io/blog/setup-pi-zero-w-headless-wifi
+
+use dd to write img disk image instead of etcher. 

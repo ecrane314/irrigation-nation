@@ -1,0 +1,27 @@
+<!-- 
+# Initial inspiration included this web front and pi backend
+# https://www.hackster.io/ben-eagan/raspberry-pi-automated-plant-watering-with-website-8af2dc
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title>{{ title }}</title>
+	<link rel="icon" href="favicon.ico">
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
+<body>
+	<h1>PLANT HELPLINE</h1>
+	<h2>The date and time on the server is: {{ time }}</h2>
+	<h2> {{ text }} </h2>
+	<a href="/auto/water/ON"><button>Turn ON Auto Watering</button></a>
+	<a href="/auto/water/OFF"><button>Turn OFF Auto Watering</button></a>
+	<a href="/sensor"><button>Check Soil Status</button></a> <br>
+	<a href="/water"><button>Water Once</button></a>
+	<a href="/last_watered"><button>Check Time Last Watered</button></a>
+	<script src="//code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+	<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</body>
+</html>
