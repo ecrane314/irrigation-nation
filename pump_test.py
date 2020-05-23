@@ -23,7 +23,7 @@ def pump_test():
     GPIO.setmode(GPIO.BCM)
     pins = [16, 20, 21, 19]
     pin = 19
-    seconds = 10
+    seconds = 20
 
     # Setup all pins regardless of use to avoid non-deterministic behavior
     # setup pins as output and set them high (true) since they activate on low
@@ -42,9 +42,8 @@ def pump_test():
 
     # Turn on relay for 10 seconds then sleep
     try:
-        #TODO make this non-magic, add SECONDS with formatting
-        print("go-10")
-        sense.show_message("go-10")
+        print("watering %s seconds" % (seconds))
+        sense.show_message("go-%s" % (seconds))
 
         GPIO.output(pin, False)
         time.sleep(seconds)
