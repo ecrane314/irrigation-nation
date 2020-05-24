@@ -9,5 +9,10 @@ Inspired by https://www.hackster.io/ben-eagan/raspberry-pi-automated-plant-water
 
 ## 1. Install Requirements
 `pip3 install -r requirements.txt`
-## 2. Run Flask
+## 3. Run Flask (Optional)
 `export FLASK_APP=web_plants.py; flask run`
+
+## 2. Set Scheduler
+`crontab -e`
+`/usr/bin/python3 <absolute path to pump_test.py`
+https://crontab-generator.org/

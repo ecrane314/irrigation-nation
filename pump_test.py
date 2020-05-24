@@ -4,31 +4,32 @@
 # This runs twice a day, at 8am and 2pm, per linux date command.
 # crontab -e to edit your crontab
 
-
+"""Pump function to be called from crontab"""
 #TODO import sys  sys.argv[0] etc ;  use for crontab
 
-# import GPIO and time
+# imports
+import time
 import RPi.GPIO as GPIO
 from sense_hat import SenseHat
-import time
 
 
 def pump_test():
+    """Establish relay pins and run pump for seconds on pin of choice"""
     # record when trial begins
     print("Starting run at: " + str(time.localtime()))
 
     # README: See relay_test.pi for more information on the relay configuration
     # This is a 10 second test for the relay-attached pump on pin 19
     GPIO.setmode(GPIO.BCM)
-    PINS=[16,20,21,19]
-    PIN=19
-    SECONDS=10
+    pins = [16, 20, 21, 19]
+    pin = 19
+    seconds = 20
 
     # Setup all pins regardless of use to avoid non-deterministic behavior
     # setup pins as output and set them high (true) since they activate on low
-    for i in PINS:
-        GPIO.setup(i,GPIO.OUT)
-        GPIO.output(i,True)
+    for i in pins:
+        GPIO.setup(i, GPIO.OUT)
+        GPIO.output(i, True)
     print("GPIO setup complete")
 
 
@@ -41,13 +42,12 @@ def pump_test():
 
     # Turn on relay for 10 seconds then sleep
     try:
-        #TODO make this non-magic, add SECONDS with formatting
-        print("go-10")
-        sense.show_message("go-10")
+        print("watering %s seconds" % (seconds))
+        sense.show_message("go-%s" % (seconds))
 
-        GPIO.output(PIN,False)
-        time.sleep(SECONDS)
-        GPIO.output(PIN,True)
+        GPIO.output(pin, False)
+        time.sleep(seconds)
+        GPIO.output(pin, True)
 
         print("done at: " + str(time.localtime()))
         sense.show_message("done")
@@ -57,10 +57,10 @@ def pump_test():
     # Go high to turn off on interupt or exit
     # cleanup the GPIO for good measure
     except:
-        GPIO.output(PIN,True)
+        GPIO.output(pin, True)
         GPIO.cleanup()
         print("Exception at: " + str(time.localtime()))
 
 
-if __name__=="__main__":
+if __name__ == "__main__":
     pump_test()

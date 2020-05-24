@@ -7,8 +7,8 @@ Will test each function in their order in the API:
 https://pythonhosted.org/sense-hat/api/
 """
 
-from sense_hat import SenseHat
 import time
+from sense_hat import SenseHat
 
 sense = SenseHat()
 
@@ -21,18 +21,18 @@ try:
     while True:
         #LED Matrix Test
         sense.show_message("Hello, world!", text_colour=[50, 50, 50])
-        
+
         #Environmental sensors
         humid = sense.get_humidity()
         temp = sense.get_temperature_from_humidity()
         pressure = sense.get_pressure()
         temp2 = sense.get_temperature_from_pressure()
-        
+
         print("humidity: " + str(humid))
         print("temp: "+ str(sense.temp))
         print("pressure: "+ str(pressure))
         print("temp2: "+ str(temp2))
-        
+
         #IMU Sensor (inertial measurement unit)
         heading = sense.get_compass() #magneto
         gyro_only = sense.get_gyroscope() #gyro
