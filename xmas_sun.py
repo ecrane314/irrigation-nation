@@ -10,8 +10,8 @@ import requests
 
 def get_sunrise_sunset(lat=30.267238, lng=-97.755202, civil=0, nautical=0):
     """Input lattitude and longitude and return sunrise and sunset times"""
-    request = "https://sunrise-sunset.org/json?lat=%i&lng=%i" % lat lng
-    sunrise, sunset = requests.get(req
+    request_mine = "https://sunrise-sunset.org/json?lat=%i&lng=%i" % (lat, lng)
+    sunrise, sunset = requests.get(request_mine)
     return 
 
 if __name__ == "__main__":
