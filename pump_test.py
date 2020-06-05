@@ -13,7 +13,7 @@ import RPi.GPIO as GPIO
 from sense_hat import SenseHat
 
 
-def pump_test():
+def pump_test(seconds=20):
     """Establish relay pins and run pump for seconds on pin of choice"""
     # record when trial begins
     print("Starting run at: " + str(time.localtime()))
@@ -23,7 +23,7 @@ def pump_test():
     GPIO.setmode(GPIO.BCM)
     pins = [16, 20, 21, 19]
     pin = 19
-    seconds = 20
+    #seconds = 20   // now a param
 
     # Setup all pins regardless of use to avoid non-deterministic behavior
     # setup pins as output and set them high (true) since they activate on low
