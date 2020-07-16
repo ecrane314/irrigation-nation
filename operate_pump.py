@@ -16,7 +16,7 @@ from sense_hat import SenseHat
 
 def pump_test(seconds=60):
 
-    # confirm runtime argument
+    # confirm runtime argument overrides default
     print("Seconds to run:" + seconds)
 
     """Establish relay pins and run pump for seconds on pin of choice"""
@@ -68,5 +68,6 @@ def pump_test(seconds=60):
 
 
 if __name__ == "__main__":
-    seconds = sys.argv[2]
+    # function is 0 and argument is 1, python3 not involved
+    seconds = sys.argv[1]
     pump_test(seconds)
