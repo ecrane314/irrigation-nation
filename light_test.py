@@ -7,6 +7,8 @@
 """Pump function to be called from crontab"""
 #TODO import sys  sys.argv[0] etc ;  use for crontab
 
+#FOR LIGHTS
+
 # imports
 import time
 import sys
@@ -14,11 +16,7 @@ import RPi.GPIO as GPIO
 from sense_hat import SenseHat
 
 
-def pump_test(seconds=60):
-
-    # confirm runtime argument overrides default
-    print("Seconds to run:" + seconds)
-
+def pump_test(seconds=30):
     """Establish relay pins and run pump for seconds on pin of choice"""
     # record when trial begins
     print("Starting run at: " + str(time.localtime()))
@@ -27,7 +25,7 @@ def pump_test(seconds=60):
     # This is a 10 second test for the relay-attached pump on pin 19
     GPIO.setmode(GPIO.BCM)
     pins = [16, 20, 21, 19]
-    pin = 19
+    pin = 20
     #seconds = 20   // now a param
 
     # Setup all pins regardless of use to avoid non-deterministic behavior
@@ -40,14 +38,14 @@ def pump_test(seconds=60):
 
     # Prepare sense hat display
     sense = SenseHat()
-    print("sleeping")
-    sense.show_message("sleeping")
-    time.sleep(2)
+    #print("sleeping")
+    #sense.show_message("sleeping")
+    #time.sleep(2)
 
 
     # Turn on relay for 10 seconds then sleep
     try:
-        print("watering %s seconds" % (seconds))
+        print("running %s seconds" % (seconds))
         sense.show_message("go-%s" % (seconds))
 
         GPIO.output(pin, False)
@@ -55,6 +53,7 @@ def pump_test(seconds=60):
         GPIO.output(pin, True)
 
         print("done at: " + str(time.localtime()))
+        print("==============================")
         sense.show_message("done")
         # would running cleanup before the message interfere with the display?
         GPIO.cleanup()
@@ -68,7 +67,6 @@ def pump_test(seconds=60):
 
 
 if __name__ == "__main__":
-    # function is 0 and argument is 1, python3 not involved
-    seconds = sys.argv[1]
+    seconds = int(sys.argv[1])
     print("seconds is: %i" % seconds)
     pump_test(seconds)
