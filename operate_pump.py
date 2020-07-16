@@ -9,11 +9,16 @@
 
 # imports
 import time
+import sys
 import RPi.GPIO as GPIO
 from sense_hat import SenseHat
 
 
-def pump_test(seconds=20):
+def pump_test(seconds=60):
+
+    # confirm runtime argument
+    print("Seconds to run:" + seconds)
+
     """Establish relay pins and run pump for seconds on pin of choice"""
     # record when trial begins
     print("Starting run at: " + str(time.localtime()))
@@ -63,4 +68,5 @@ def pump_test(seconds=20):
 
 
 if __name__ == "__main__":
-    pump_test()
+    seconds = sys.argv[2]
+    pump_test(seconds)
