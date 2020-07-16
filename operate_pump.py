@@ -17,7 +17,7 @@ from sense_hat import SenseHat
 def pump_test(seconds=60):
 
     # confirm runtime argument overrides default
-    print("Seconds to run:" + seconds)
+    print("Seconds to run: %i" % seconds)
 
     """Establish relay pins and run pump for seconds on pin of choice"""
     # record when trial begins
@@ -47,8 +47,8 @@ def pump_test(seconds=60):
 
     # Turn on relay for 10 seconds then sleep
     try:
-        print("watering %s seconds" % (seconds))
-        sense.show_message("go-%s" % (seconds))
+        print("watering %i seconds" % (seconds))
+        sense.show_message("go-%i" % (seconds))
 
         GPIO.output(pin, False)
         time.sleep(seconds)
@@ -69,6 +69,6 @@ def pump_test(seconds=60):
 
 if __name__ == "__main__":
     # function is 0 and argument is 1, python3 not involved
-    seconds = sys.argv[1]
+    seconds = int(sys.argv[1])
     print("seconds is: %i" % seconds)
     pump_test(seconds)
