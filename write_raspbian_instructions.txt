@@ -3,3 +3,20 @@
 https://desertbot.io/blog/setup-pi-zero-w-headless-wifi
 
 use dd to write img disk image instead of etcher. 
+
+diskutil list
+
+#unmount your disk
+diskutil unmountDisk /dev/disk2
+
+#confirm input and output then write image to card
+sudo dd bs=1m if=~/Downloads/2020-02-13-raspbian-buster-lite.img of=/dev/disk2
+
+#create ssh file so you can login
+touch /Volumes/boot/ssh
+
+#wpa supplicant to learn your network
+# check ssh touch step if you have since booted
+vim /Volumes/boot/wpa_supplicant.conf
+
+
