@@ -6,15 +6,16 @@
 
 """Pump function to be called from crontab"""
 #TODO import sys  sys.argv[0] etc ;  use for crontab
+#TODO Separate sense_hat logic in case hardware failure, wont interfere
 
 # imports
 import time
 import sys
 import RPi.GPIO as GPIO
-from sense_hat import SenseHat
+#from sense_hat import SenseHat
 
 
-def pump_test(seconds=60):
+def operate_pump(seconds=60):
 
     # confirm runtime argument overrides default
     print("Seconds to run: %i" % seconds)
@@ -39,23 +40,23 @@ def pump_test(seconds=60):
 
 
     # Prepare sense hat display
-    sense = SenseHat()
+   # sense = SenseHat()
     print("sleeping")
-    sense.show_message("sleeping")
+   # sense.show_message("sleeping")
     time.sleep(2)
 
 
     # Turn on relay for 10 seconds then sleep
     try:
         print("watering %i seconds" % (seconds))
-        sense.show_message("go-%i" % (seconds))
+     #   sense.show_message("go-%i" % (seconds))
 
         GPIO.output(pin, False)
         time.sleep(seconds)
         GPIO.output(pin, True)
 
         print("done at: " + str(time.localtime()))
-        sense.show_message("done")
+    #    sense.show_message("done")
         # would running cleanup before the message interfere with the display?
         GPIO.cleanup()
 
@@ -71,4 +72,4 @@ if __name__ == "__main__":
     # function is 0 and argument is 1, python3 not involved
     seconds = int(sys.argv[1])
     print("seconds is: %i" % seconds)
-    pump_test(seconds)
+    operate_pump(seconds)
