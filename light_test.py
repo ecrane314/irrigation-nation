@@ -13,7 +13,6 @@
 import time
 import sys
 import RPi.GPIO as GPIO
-from sense_hat import SenseHat
 
 
 def pump_test(seconds=30):
@@ -36,17 +35,10 @@ def pump_test(seconds=30):
     print("GPIO setup complete")
 
 
-    # Prepare sense hat display
-    sense = SenseHat()
-    #print("sleeping")
-    #sense.show_message("sleeping")
-    #time.sleep(2)
-
 
     # Turn on relay for 10 seconds then sleep
     try:
         print("running %s seconds" % (seconds))
-        sense.show_message("go-%s" % (seconds))
 
         GPIO.output(pin, False)
         time.sleep(seconds)
@@ -54,8 +46,6 @@ def pump_test(seconds=30):
 
         print("done at: " + str(time.localtime()))
         print("==============================")
-        sense.show_message("done")
-        # would running cleanup before the message interfere with the display?
         GPIO.cleanup()
 
     # Go high to turn off on interupt or exit
