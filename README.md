@@ -22,8 +22,8 @@ Set system clock of device so that Cron works as expected. On Raspberry Pi, use 
 `ssh-keygen -t ed25512 -C your@email.com`
 `eval "$(ssh-agent -s)"`
 `ssh-add ~/.ssh/id_rsa` The private key
-
 Then add the public key to your github account or other
+ensure `git remote -v` shows your remotes as ssh destinatinos and not https else it will ask for username and password, not the key.
 
 ### Additional Credit
 With inspiration from https://www.hackster.io/ben-eagan/raspberry-pi-automated-plant-watering-with-website-8af2dc
