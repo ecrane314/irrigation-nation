@@ -25,6 +25,13 @@ Set system clock of device so that Cron works as expected. On Raspberry Pi, use 
 Then add the public key to your github account or other
 ensure `git remote -v` shows your remotes as ssh destinatinos and not https else it will ask for username and password, not the key.
 
+
+~/.ssh/config file should have something like this
+Host github.com
+        AddKeysToAgent yes
+        IdentityFile ~/.ssh/github<private key>
+
+
 ### Additional Credit
 With inspiration from https://www.hackster.io/ben-eagan/raspberry-pi-automated-plant-watering-with-website-8af2dc
 > specifically, the inclusion of flask-based front end
