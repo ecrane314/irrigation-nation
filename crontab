@@ -1,0 +1,13 @@
+Sample crontab file. Use `crontab -l` or `crontab -e` to view or edit, respectively.
+
+# Runs every minute, for script testing
+# https://crontab-generator.org/
+#* * * * * /home/pi/foo.sh >> /home/pi/scratch.out 2>&1
+
+#pi@eac-pi:~ $ cat foo.sh 
+# /usr/bin/env sh
+# echo 'blah1 foo.sh'
+
+
+0 7 * * * /usr/bin/python3 /home/pi/irrigation-nation/operate_pump.py 10 >> /home/pi/log.out 2>&1
+#0 7 1-31/2 * * /usr/bin/python3 /home/pi/irrigation-nation/operate_pump.py 120 >> /home/pi/log.out 2>&1
