@@ -4,6 +4,8 @@
 Digital plant watering system based on Raspberry Pi.
 
 ## 1. Install Requirements
+#in case you're missing pip
+`sudo apt install python3-pip`
 `pip3 install -r requirements.txt`
 ## 3. Run Flask (Optional)
 `export FLASK_APP=web_plants.py; flask run`
