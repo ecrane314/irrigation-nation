@@ -1,5 +1,12 @@
 [WIP] https://guides.github.com/features/mastering-markdown/ 
 
+## Google API
+https://googleapis.dev/python/cloudiot/latest/index.html 
+This is to connect and manage devices IE management control plane NOT device data plane.
+[TODO] Still need to write APIs for that?
+[TODO] Python requests library
+
+
 # Irrigation Nation
 Digital plant watering system based on Raspberry Pi.
 
@@ -34,8 +41,8 @@ Host github.com
         IdentityFile ~/.ssh/github<private key>
 
 
+
+
 ### Additional Credit
 With inspiration from https://www.hackster.io/ben-eagan/raspberry-pi-automated-plant-watering-with-website-8af2dc
 > specifically, the inclusion of flask-based front end
-
-
