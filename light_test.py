@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/bin/env python3
 
 # run the pump, setup to be run from cron
 # https://crontab-generator.org/

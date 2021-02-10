@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 # run the pump, setup to be run from cron
 # https://crontab-generator.org/
 # 0 8,14 * * * /usr/bin/python3 /home/pi/pi-water-plants/pump_test.py > /home/pi/water.out
