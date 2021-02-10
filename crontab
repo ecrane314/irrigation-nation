@@ -8,8 +8,12 @@ https://crontab-generator.org/
 https://crontab.guru/
 
 
-Runs every minute, for script testing
-* * * * * /home/pi/foo.sh >> /home/pi/scratch.out 2>&1
+Runs every minute for script testing, ensure foo exists as below
+* * * * * /home/pi/foo.py >> /home/pi/scratch.out 2>&1
+	pi@eac-pi:~ $ cat foo.py 
+	#!/usr/bin/env python3
+	x = 5
+	print(x)
 
 
 Run every 3 days at 7 am
