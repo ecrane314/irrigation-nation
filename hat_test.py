@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 """
 Test for all SenseHat functions to ensure wiring is correct when I detach it
 from the Pi and connect it via wires described on pinout here:
