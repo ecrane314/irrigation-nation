@@ -22,17 +22,17 @@ def get_solar_data(lat=30.267238, lng=-97.755202, civil=0, nautical=0):
     #print(response)
 
     print(type(response.content))
-    print(response.content)
+    #print(response.content)
 
     return response.content
 
-def extract_phase(data):
-    """Extract a particular phase from the JSON API response"""
-    parse = json.loads(data)
-    print(type(parse))
-    #TODO Fix this extraction from dictionary. It's nested
-    print(parse.get("results.sunrise"))
-    #return parse["results.sunrise"]
+def extract_phase(phase_data, phase="sunrise"):
+    """Extract a particular phase from the JSON API response"""    
+    #load json response to dict with phases
+    parse = json.loads(phase_data)
+    
+    #print(list(parse))
+    return(parse["results"][phase])
 
 if __name__ == "__main__":
-    extract_phase(get_solar_data())
+    print(extract_phase(get_solar_data()))
