@@ -16,12 +16,15 @@ import requests
 
 def get_solar_data(lat=30.267238, lng=-97.755202):
     """Input lattitude and longitude and return sunrise and sunset times"""
-    request_body = "https://api.sunrise-sunset.org/json?lat=%f&lng=%f" % (lat, lng)
-    #print("Request body: " + request_body)
+    #request includes lat and long, formatting turned off here, on by default
+    request_body = "https://api.sunrise-sunset.org/json?lat=%f&lng=%f&formatted=0" % (lat, lng)
+    #   print("Request body: " + request_body)
 
     response = requests.get(request_body)
     print(response)
-    #print(response.content)
+    print("================")
+    print(response.content)
+    print("================")
 
     return response.content
 
@@ -35,6 +38,7 @@ def extract_phase(phase_data, phase="sunrise"):
     #print(list(parse))
 
     try:
+        #TODO Add time zone shift for system time.
         return parse["results"][phase]
     except KeyError:
         print("No phase named: " + phase)
