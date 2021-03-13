@@ -1,28 +1,24 @@
 #!/usr/bin/env python3
 
-# run the pump, setup to be run from cron
-# https://crontab-generator.org/
-# 0 8,14 * * * /usr/bin/python3 /home/pi/pi-water-plants/pump_test.py > /home/pi/water.out
-# This runs twice a day, at 8am and 2pm, per linux date command.
-# crontab -e to edit your crontab
+"""
+Pump function to be called from crontab
+See `crontab` file for sample schedules, generators, and validators
+"""
 
-"""Pump function to be called from crontab"""
-#TODO import sys  sys.argv[0] etc ;  use for crontab
-#TODO Separate sense_hat logic in case hardware failure, wont interfere
-
-# imports
 import time
 import sys
+
 import RPi.GPIO as GPIO
 #from sense_hat import SenseHat
+#TODO Separate sense_hat logic in case hardware failure, wont interfere
 
 
 def operate_pump(seconds=60):
-
+    """Setup relay and run the pump"""
     # confirm runtime argument overrides default
     print("Seconds to run: %i" % seconds)
 
-    """Establish relay pins and run pump for seconds on pin of choice"""
+    ### Establish relay pins and run pump for seconds on pin of choice ###
     # record when trial begins
     print("Starting run at: " + str(time.localtime()))
 
@@ -42,9 +38,9 @@ def operate_pump(seconds=60):
 
 
     # Prepare sense hat display
-   # sense = SenseHat()
+    #sense = SenseHat()
     print("sleeping")
-   # sense.show_message("sleeping")
+    #sense.show_message("sleeping")
     time.sleep(2)
 
 
@@ -62,9 +58,8 @@ def operate_pump(seconds=60):
         # would running cleanup before the message interfere with the display?
         GPIO.cleanup()
 
-    # Go high to turn off on interupt or exit
-    # cleanup the GPIO for good measure
-    except:
+    # Go High-True to turn off on interupt, cleanup GPIO for good measure
+    except KeyboardInterrupt:
         GPIO.output(pin, True)
         GPIO.cleanup()
         print("Exception at: " + str(time.localtime()))
@@ -72,6 +67,6 @@ def operate_pump(seconds=60):
 
 if __name__ == "__main__":
     # function is 0 and argument is 1, python3 not involved
-    seconds = int(sys.argv[1])
-    print("seconds is: %i" % seconds)
-    operate_pump(seconds)
+    seconds_input = int(sys.argv[1])
+    print("seconds is: %i" % seconds_input)
+    operate_pump(seconds_input)

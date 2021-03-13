@@ -7,7 +7,6 @@
 # crontab -e to edit your crontab
 
 """Pump function to be called from crontab"""
-#TODO import sys  sys.argv[0] etc ;  use for crontab
 #TODO Separate sense_hat logic in case hardware failure, wont interfere
 
 # imports
