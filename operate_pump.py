@@ -1,72 +1,100 @@
 #!/usr/bin/env python3
 
 """
-Pump function to be called from crontab
+Pump function to be called directly or from crontab
 See `crontab` file for sample schedules, generators, and validators
+Credentials are explicit as can't guarantee crontab shell env
 """
 
-import time
+from time import sleep
 import sys
+import logging
 
+import google.cloud.logging
 import RPi.GPIO as GPIO
-#from sense_hat import SenseHat
-#TODO Separate sense_hat logic in case hardware failure, wont interfere
+
+
+#create logger and set level
+logger = logging.getLogger(__name__)
+logger.setLevel(logging.DEBUG)
+
+#create a format, optional
+formatter = logging.Formatter('%(asctime)s %(levelname)s %(message)s')
+
+#create file handler with path, set formatter
+file_handler = logging.FileHandler('operate_pump.log')
+file_handler.setFormatter(formatter)
+
+#add handlers to logger
+logger.addHandler(file_handler)
+
+
+###  CREATE HANDLER TO WRITE TO GCP CLOUD LOGS  ###
+#create cloud logging client
+try:
+    client = google.cloud.logging.Client.from_service_account_json(\
+        '/home/pi/crane-gcp_pi-water-plants.json')
+
+    #Create cloud handler and set formatter
+    cloud_handler = google.cloud.logging.handlers.CloudLoggingHandler(client)
+    cloud_handler.setFormatter(formatter)
+
+    #add cloud handler
+    logger.addHandler(cloud_handler)
+
+except FileNotFoundError:
+    logger.error('Cloud logger client not established')
+
+# Which handlers were setup?
+logger.info("Handlers: %s", logger.handlers)
 
 
 def operate_pump(seconds=60):
     """Setup relay and run the pump"""
     # confirm runtime argument overrides default
-    print("Seconds to run: %i" % seconds)
+    logger.info("Seconds to run: %i", seconds)
 
     ### Establish relay pins and run pump for seconds on pin of choice ###
     # record when trial begins
-    print("Starting run at: " + str(time.localtime()))
+    logger.info("Starting run")
 
     # README: See relay_test.pi for more information on the relay configuration
-    # This is a 10 second test for the relay-attached pump on pin 19
+    # Pump is attached to relay on pin 19
     GPIO.setmode(GPIO.BCM)
     pins = [16, 20, 21, 19]
     pin = 19
-    #seconds = 20   // now a param
 
     # Setup all pins regardless of use to avoid non-deterministic behavior
-    # setup pins as output and set them high (true) since they activate on low
+    # Setup pins as output and set them high (true) as they activate on low
     for i in pins:
         GPIO.setup(i, GPIO.OUT)
         GPIO.output(i, True)
-    print("GPIO setup complete")
+    logger.info("GPIO setup complete")
 
-
-    # Prepare sense hat display
-    #sense = SenseHat()
-    print("sleeping")
-    #sense.show_message("sleeping")
-    time.sleep(2)
+    # Wait before activating pump
+    sleep(2)
 
 
     # Turn on relay for 10 seconds then sleep
     try:
         print("watering %i seconds" % (seconds))
-     #   sense.show_message("go-%i" % (seconds))
 
         GPIO.output(pin, False)
-        time.sleep(seconds)
+        sleep(seconds)
         GPIO.output(pin, True)
 
-        print("done at: " + str(time.localtime()))
-    #    sense.show_message("done")
-        # would running cleanup before the message interfere with the display?
+        logger.info("Done Watering")
         GPIO.cleanup()
 
     # Go High-True to turn off on interupt, cleanup GPIO for good measure
     except KeyboardInterrupt:
         GPIO.output(pin, True)
         GPIO.cleanup()
-        print("Exception at: " + str(time.localtime()))
+        logger.error("KeyboardInterrupt")
 
 
 if __name__ == "__main__":
     # function is 0 and argument is 1, python3 not involved
     seconds_input = int(sys.argv[1])
-    print("seconds is: %i" % seconds_input)
+    logger.info("seconds is: %i", seconds_input)
     operate_pump(seconds_input)
