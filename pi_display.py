@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 from sense_hat import SenseHat
 
 ##https://pythonhosted.org/sense-hat/api/#environmental-sensors
