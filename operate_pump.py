@@ -33,7 +33,7 @@ logger.addHandler(file_handler)
 #create cloud logging client
 try:
     client = google.cloud.logging.Client.from_service_account_json(\
-        '/home/pi/crane-gcp_pi-water-plants.json')
+        '/home/pi/keys/crane-gcp_pi-water-plants.json')
 
     #Create cloud handler and set formatter
     cloud_handler = google.cloud.logging.handlers.CloudLoggingHandler(client)
