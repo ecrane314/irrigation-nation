@@ -1,5 +1,6 @@
 scripts/last_watered
 scripts/__pycache__/*
 .vscode/
+*.log
 .DS_Store
 */.DS_Store
