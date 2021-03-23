@@ -9,7 +9,7 @@ https://crontab.guru/
 
 
 Runs every minute for script testing, ensure foo exists as below
-* * * * * /home/pi/foo.py >> /home/pi/scratch.out 2>&1
+* * * * * /home/pi/foo.py
 	pi@eac-pi:~ $ cat foo.py 
 	#!/usr/bin/env python3
 	x = 5
@@ -17,12 +17,12 @@ Runs every minute for script testing, ensure foo exists as below
 
 
 Run every 3 days at 7 am
-0 7 */3 * * /usr/bin/python3 /home/pi/irrigation-nation/operate_pump.py 180 >> /home/pi/log.out 2>&1
+0 7 */3 * * /home/pi/irrigation-nation/operate_pump.py 180
 
 
 Run each morning at 7am
-0 7 * * * /usr/bin/python3 /home/pi/irrigation-nation/operate_pump.py 10 >> /home/pi/log.out 2>&1
+0 7 * * * /home/pi/irrigation-nation/operate_pump.py 10
 
 
 Run every other day at 7am
-0 7 1-31/2 * * /usr/bin/python3 /home/pi/irrigation-nation/operate_pump.py 120 >> /home/pi/log.out 2>&1
+0 7 1-31/2 * * /home/pi/irrigation-nation/operate_pump.py 120
