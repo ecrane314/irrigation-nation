@@ -1,5 +1,5 @@
 scripts/last_watered
-scripts/__pycache__/*
+*/__pycache__/*
 .vscode/
 *.log
 .DS_Store
