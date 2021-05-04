@@ -1,0 +1,301 @@
+seconds is: 10
+Seconds to run: 10
+Starting run at: time.struct_time(tm_year=2021, tm_mon=1, tm_mday=1, tm_hour=7, tm_min=0, tm_sec=1, tm_wday=4, tm_yday=1, tm_isdst=0)
+GPIO setup complete
+sleeping
+watering 10 seconds
+done at: time.struct_time(tm_year=2021, tm_mon=1, tm_mday=1, tm_hour=7, tm_min=0, tm_sec=13, tm_wday=4, tm_yday=1, tm_isdst=0)
+seconds is: 10
+Seconds to run: 10
+Starting run at: time.struct_time(tm_year=2021, tm_mon=1, tm_mday=2, tm_hour=7, tm_min=0, tm_sec=2, tm_wday=5, tm_yday=2, tm_isdst=0)
+GPIO setup complete
+sleeping
+watering 10 seconds
+done at: time.struct_time(tm_year=2021, tm_mon=1, tm_mday=2, tm_hour=7, tm_min=0, tm_sec=14, tm_wday=5, tm_yday=2, tm_isdst=0)
+seconds is: 10
+Seconds to run: 10
+Starting run at: time.struct_time(tm_year=2021, tm_mon=1, tm_mday=3, tm_hour=7, tm_min=0, tm_sec=1, tm_wday=6, tm_yday=3, tm_isdst=0)
+GPIO setup complete
+sleeping
+watering 10 seconds
+done at: time.struct_time(tm_year=2021, tm_mon=1, tm_mday=3, tm_hour=7, tm_min=0, tm_sec=13, tm_wday=6, tm_yday=3, tm_isdst=0)
+seconds is: 10
+Seconds to run: 10
+Starting run at: time.struct_time(tm_year=2021, tm_mon=1, tm_mday=4, tm_hour=7, tm_min=0, tm_sec=1, tm_wday=0, tm_yday=4, tm_isdst=0)
+GPIO setup complete
+sleeping
+watering 10 seconds
+done at: time.struct_time(tm_year=2021, tm_mon=1, tm_mday=4, tm_hour=7, tm_min=0, tm_sec=13, tm_wday=0, tm_yday=4, tm_isdst=0)
+seconds is: 10
+Seconds to run: 10
+Starting run at: time.struct_time(tm_year=2021, tm_mon=1, tm_mday=5, tm_hour=7, tm_min=0, tm_sec=1, tm_wday=1, tm_yday=5, tm_isdst=0)
+GPIO setup complete
+sleeping
+watering 10 seconds
+done at: time.struct_time(tm_year=2021, tm_mon=1, tm_mday=5, tm_hour=7, tm_min=0, tm_sec=13, tm_wday=1, tm_yday=5, tm_isdst=0)
+seconds is: 10
+Seconds to run: 10
+Starting run at: time.struct_time(tm_year=2021, tm_mon=1, tm_mday=6, tm_hour=7, tm_min=0, tm_sec=2, tm_wday=2, tm_yday=6, tm_isdst=0)
+GPIO setup complete
+sleeping
+watering 10 seconds
+done at: time.struct_time(tm_year=2021, tm_mon=1, tm_mday=6, tm_hour=7, tm_min=0, tm_sec=14, tm_wday=2, tm_yday=6, tm_isdst=0)
+seconds is: 10
+Seconds to run: 10
+Starting run at: time.struct_time(tm_year=2021, tm_mon=1, tm_mday=7, tm_hour=7, tm_min=0, tm_sec=1, tm_wday=3, tm_yday=7, tm_isdst=0)
+GPIO setup complete
+sleeping
+watering 10 seconds
+done at: time.struct_time(tm_year=2021, tm_mon=1, tm_mday=7, tm_hour=7, tm_min=0, tm_sec=13, tm_wday=3, tm_yday=7, tm_isdst=0)
+seconds is: 10
+Seconds to run: 10
+Starting run at: time.struct_time(tm_year=2021, tm_mon=1, tm_mday=8, tm_hour=7, tm_min=0, tm_sec=1, tm_wday=4, tm_yday=8, tm_isdst=0)
+GPIO setup complete
+sleeping
+watering 10 seconds
+done at: time.struct_time(tm_year=2021, tm_mon=1, tm_mday=8, tm_hour=7, tm_min=0, tm_sec=13, tm_wday=4, tm_yday=8, tm_isdst=0)
+seconds is: 10
+Seconds to run: 10
+Starting run at: time.struct_time(tm_year=2021, tm_mon=1, tm_mday=9, tm_hour=7, tm_min=0, tm_sec=1, tm_wday=5, tm_yday=9, tm_isdst=0)
+GPIO setup complete
+sleeping
+watering 10 seconds
+done at: time.struct_time(tm_year=2021, tm_mon=1, tm_mday=9, tm_hour=7, tm_min=0, tm_sec=13, tm_wday=5, tm_yday=9, tm_isdst=0)
+seconds is: 10
+Seconds to run: 10
+Starting run at: time.struct_time(tm_year=2021, tm_mon=1, tm_mday=10, tm_hour=7, tm_min=0, tm_sec=1, tm_wday=6, tm_yday=10, tm_isdst=0)
+GPIO setup complete
+sleeping
+watering 10 seconds
+done at: time.struct_time(tm_year=2021, tm_mon=1, tm_mday=10, tm_hour=7, tm_min=0, tm_sec=13, tm_wday=6, tm_yday=10, tm_isdst=0)
+seconds is: 10
+Seconds to run: 10
+Starting run at: time.struct_time(tm_year=2021, tm_mon=1, tm_mday=11, tm_hour=7, tm_min=0, tm_sec=1, tm_wday=0, tm_yday=11, tm_isdst=0)
+GPIO setup complete
+sleeping
+watering 10 seconds
+done at: time.struct_time(tm_year=2021, tm_mon=1, tm_mday=11, tm_hour=7, tm_min=0, tm_sec=13, tm_wday=0, tm_yday=11, tm_isdst=0)
+seconds is: 10
+Seconds to run: 10
+Starting run at: time.struct_time(tm_year=2021, tm_mon=1, tm_mday=12, tm_hour=7, tm_min=0, tm_sec=1, tm_wday=1, tm_yday=12, tm_isdst=0)
+GPIO setup complete
+sleeping
+watering 10 seconds
+done at: time.struct_time(tm_year=2021, tm_mon=1, tm_mday=12, tm_hour=7, tm_min=0, tm_sec=13, tm_wday=1, tm_yday=12, tm_isdst=0)
+seconds is: 10
+Seconds to run: 10
+Starting run at: time.struct_time(tm_year=2021, tm_mon=1, tm_mday=13, tm_hour=7, tm_min=0, tm_sec=2, tm_wday=2, tm_yday=13, tm_isdst=0)
+GPIO setup complete
+sleeping
+watering 10 seconds
+done at: time.struct_time(tm_year=2021, tm_mon=1, tm_mday=13, tm_hour=7, tm_min=0, tm_sec=14, tm_wday=2, tm_yday=13, tm_isdst=0)
+seconds is: 10
+Seconds to run: 10
+Starting run at: time.struct_time(tm_year=2021, tm_mon=1, tm_mday=14, tm_hour=7, tm_min=0, tm_sec=1, tm_wday=3, tm_yday=14, tm_isdst=0)
+GPIO setup complete
+sleeping
+watering 10 seconds
+done at: time.struct_time(tm_year=2021, tm_mon=1, tm_mday=14, tm_hour=7, tm_min=0, tm_sec=13, tm_wday=3, tm_yday=14, tm_isdst=0)
+seconds is: 10
+Seconds to run: 10
+Starting run at: time.struct_time(tm_year=2021, tm_mon=1, tm_mday=15, tm_hour=7, tm_min=0, tm_sec=1, tm_wday=4, tm_yday=15, tm_isdst=0)
+GPIO setup complete
+sleeping
+watering 10 seconds
+done at: time.struct_time(tm_year=2021, tm_mon=1, tm_mday=15, tm_hour=7, tm_min=0, tm_sec=13, tm_wday=4, tm_yday=15, tm_isdst=0)
+seconds is: 10
+Seconds to run: 10
+Starting run at: time.struct_time(tm_year=2021, tm_mon=1, tm_mday=16, tm_hour=7, tm_min=0, tm_sec=1, tm_wday=5, tm_yday=16, tm_isdst=0)
+GPIO setup complete
+sleeping
+watering 10 seconds
+done at: time.struct_time(tm_year=2021, tm_mon=1, tm_mday=16, tm_hour=7, tm_min=0, tm_sec=13, tm_wday=5, tm_yday=16, tm_isdst=0)
+seconds is: 10
+Seconds to run: 10
+Starting run at: time.struct_time(tm_year=2021, tm_mon=1, tm_mday=17, tm_hour=7, tm_min=0, tm_sec=2, tm_wday=6, tm_yday=17, tm_isdst=0)
+GPIO setup complete
+sleeping
+watering 10 seconds
+done at: time.struct_time(tm_year=2021, tm_mon=1, tm_mday=17, tm_hour=7, tm_min=0, tm_sec=14, tm_wday=6, tm_yday=17, tm_isdst=0)
+seconds is: 10
+Seconds to run: 10
+Starting run at: time.struct_time(tm_year=2021, tm_mon=1, tm_mday=18, tm_hour=7, tm_min=0, tm_sec=1, tm_wday=0, tm_yday=18, tm_isdst=0)
+GPIO setup complete
+sleeping
+watering 10 seconds
+done at: time.struct_time(tm_year=2021, tm_mon=1, tm_mday=18, tm_hour=7, tm_min=0, tm_sec=13, tm_wday=0, tm_yday=18, tm_isdst=0)
+seconds is: 10
+Seconds to run: 10
+Starting run at: time.struct_time(tm_year=2021, tm_mon=1, tm_mday=19, tm_hour=7, tm_min=0, tm_sec=1, tm_wday=1, tm_yday=19, tm_isdst=0)
+GPIO setup complete
+sleeping
+watering 10 seconds
+done at: time.struct_time(tm_year=2021, tm_mon=1, tm_mday=19, tm_hour=7, tm_min=0, tm_sec=13, tm_wday=1, tm_yday=19, tm_isdst=0)
+seconds is: 10
+Seconds to run: 10
+Starting run at: time.struct_time(tm_year=2021, tm_mon=1, tm_mday=20, tm_hour=7, tm_min=0, tm_sec=1, tm_wday=2, tm_yday=20, tm_isdst=0)
+GPIO setup complete
+sleeping
+watering 10 seconds
+done at: time.struct_time(tm_year=2021, tm_mon=1, tm_mday=20, tm_hour=7, tm_min=0, tm_sec=13, tm_wday=2, tm_yday=20, tm_isdst=0)
+seconds is: 10
+Seconds to run: 10
+Starting run at: time.struct_time(tm_year=2021, tm_mon=1, tm_mday=21, tm_hour=7, tm_min=0, tm_sec=2, tm_wday=3, tm_yday=21, tm_isdst=0)
+GPIO setup complete
+sleeping
+watering 10 seconds
+done at: time.struct_time(tm_year=2021, tm_mon=1, tm_mday=21, tm_hour=7, tm_min=0, tm_sec=14, tm_wday=3, tm_yday=21, tm_isdst=0)
+seconds is: 10
+Seconds to run: 10
+Starting run at: time.struct_time(tm_year=2021, tm_mon=1, tm_mday=22, tm_hour=7, tm_min=0, tm_sec=1, tm_wday=4, tm_yday=22, tm_isdst=0)
+GPIO setup complete
+sleeping
+watering 10 seconds
+done at: time.struct_time(tm_year=2021, tm_mon=1, tm_mday=22, tm_hour=7, tm_min=0, tm_sec=13, tm_wday=4, tm_yday=22, tm_isdst=0)
+seconds is: 10
+Seconds to run: 10
+Starting run at: time.struct_time(tm_year=2021, tm_mon=1, tm_mday=23, tm_hour=7, tm_min=0, tm_sec=1, tm_wday=5, tm_yday=23, tm_isdst=0)
+GPIO setup complete
+sleeping
+watering 10 seconds
+done at: time.struct_time(tm_year=2021, tm_mon=1, tm_mday=23, tm_hour=7, tm_min=0, tm_sec=13, tm_wday=5, tm_yday=23, tm_isdst=0)
+seconds is: 10
+Seconds to run: 10
+Starting run at: time.struct_time(tm_year=2021, tm_mon=1, tm_mday=24, tm_hour=7, tm_min=0, tm_sec=1, tm_wday=6, tm_yday=24, tm_isdst=0)
+GPIO setup complete
+sleeping
+watering 10 seconds
+done at: time.struct_time(tm_year=2021, tm_mon=1, tm_mday=24, tm_hour=7, tm_min=0, tm_sec=13, tm_wday=6, tm_yday=24, tm_isdst=0)
+seconds is: 10
+Seconds to run: 10
+Starting run at: time.struct_time(tm_year=2021, tm_mon=1, tm_mday=25, tm_hour=7, tm_min=0, tm_sec=1, tm_wday=0, tm_yday=25, tm_isdst=0)
+GPIO setup complete
+sleeping
+watering 10 seconds
+done at: time.struct_time(tm_year=2021, tm_mon=1, tm_mday=25, tm_hour=7, tm_min=0, tm_sec=13, tm_wday=0, tm_yday=25, tm_isdst=0)
+seconds is: 10
+Seconds to run: 10
+Starting run at: time.struct_time(tm_year=2021, tm_mon=1, tm_mday=26, tm_hour=7, tm_min=0, tm_sec=1, tm_wday=1, tm_yday=26, tm_isdst=0)
+GPIO setup complete
+sleeping
+watering 10 seconds
+done at: time.struct_time(tm_year=2021, tm_mon=1, tm_mday=26, tm_hour=7, tm_min=0, tm_sec=13, tm_wday=1, tm_yday=26, tm_isdst=0)
+seconds is: 10
+Seconds to run: 10
+Starting run at: time.struct_time(tm_year=2021, tm_mon=1, tm_mday=27, tm_hour=7, tm_min=0, tm_sec=1, tm_wday=2, tm_yday=27, tm_isdst=0)
+GPIO setup complete
+sleeping
+watering 10 seconds
+done at: time.struct_time(tm_year=2021, tm_mon=1, tm_mday=27, tm_hour=7, tm_min=0, tm_sec=13, tm_wday=2, tm_yday=27, tm_isdst=0)
+seconds is: 10
+Seconds to run: 10
+Starting run at: time.struct_time(tm_year=2021, tm_mon=1, tm_mday=28, tm_hour=7, tm_min=0, tm_sec=2, tm_wday=3, tm_yday=28, tm_isdst=0)
+GPIO setup complete
+sleeping
+watering 10 seconds
+done at: time.struct_time(tm_year=2021, tm_mon=1, tm_mday=28, tm_hour=7, tm_min=0, tm_sec=14, tm_wday=3, tm_yday=28, tm_isdst=0)
+seconds is: 10
+Seconds to run: 10
+Starting run at: time.struct_time(tm_year=2021, tm_mon=1, tm_mday=29, tm_hour=7, tm_min=0, tm_sec=1, tm_wday=4, tm_yday=29, tm_isdst=0)
+GPIO setup complete
+sleeping
+watering 10 seconds
+done at: time.struct_time(tm_year=2021, tm_mon=1, tm_mday=29, tm_hour=7, tm_min=0, tm_sec=13, tm_wday=4, tm_yday=29, tm_isdst=0)
+seconds is: 10
+Seconds to run: 10
+Starting run at: time.struct_time(tm_year=2021, tm_mon=1, tm_mday=30, tm_hour=7, tm_min=0, tm_sec=1, tm_wday=5, tm_yday=30, tm_isdst=0)
+GPIO setup complete
+sleeping
+watering 10 seconds
+done at: time.struct_time(tm_year=2021, tm_mon=1, tm_mday=30, tm_hour=7, tm_min=0, tm_sec=13, tm_wday=5, tm_yday=30, tm_isdst=0)
+seconds is: 10
+Seconds to run: 10
+Starting run at: time.struct_time(tm_year=2021, tm_mon=1, tm_mday=31, tm_hour=7, tm_min=0, tm_sec=1, tm_wday=6, tm_yday=31, tm_isdst=0)
+GPIO setup complete
+sleeping
+watering 10 seconds
+done at: time.struct_time(tm_year=2021, tm_mon=1, tm_mday=31, tm_hour=7, tm_min=0, tm_sec=13, tm_wday=6, tm_yday=31, tm_isdst=0)
+seconds is: 10
+Seconds to run: 10
+Starting run at: time.struct_time(tm_year=2021, tm_mon=2, tm_mday=1, tm_hour=7, tm_min=0, tm_sec=1, tm_wday=0, tm_yday=32, tm_isdst=0)
+GPIO setup complete
+sleeping
+watering 10 seconds
+done at: time.struct_time(tm_year=2021, tm_mon=2, tm_mday=1, tm_hour=7, tm_min=0, tm_sec=13, tm_wday=0, tm_yday=32, tm_isdst=0)
+seconds is: 10
+Seconds to run: 10
+Starting run at: time.struct_time(tm_year=2021, tm_mon=2, tm_mday=2, tm_hour=7, tm_min=0, tm_sec=1, tm_wday=1, tm_yday=33, tm_isdst=0)
+GPIO setup complete
+sleeping
+watering 10 seconds
+done at: time.struct_time(tm_year=2021, tm_mon=2, tm_mday=2, tm_hour=7, tm_min=0, tm_sec=13, tm_wday=1, tm_yday=33, tm_isdst=0)
+seconds is: 10
+Seconds to run: 10
+Starting run at: time.struct_time(tm_year=2021, tm_mon=2, tm_mday=3, tm_hour=7, tm_min=0, tm_sec=1, tm_wday=2, tm_yday=34, tm_isdst=0)
+GPIO setup complete
+sleeping
+watering 10 seconds
+done at: time.struct_time(tm_year=2021, tm_mon=2, tm_mday=3, tm_hour=7, tm_min=0, tm_sec=13, tm_wday=2, tm_yday=34, tm_isdst=0)
+seconds is: 180
+Seconds to run: 180
+Starting run at: time.struct_time(tm_year=2021, tm_mon=2, tm_mday=4, tm_hour=7, tm_min=0, tm_sec=2, tm_wday=3, tm_yday=35, tm_isdst=0)
+GPIO setup complete
+sleeping
+watering 180 seconds
+done at: time.struct_time(tm_year=2021, tm_mon=2, tm_mday=4, tm_hour=7, tm_min=3, tm_sec=4, tm_wday=3, tm_yday=35, tm_isdst=0)
+seconds is: 180
+Seconds to run: 180
+Starting run at: time.struct_time(tm_year=2021, tm_mon=2, tm_mday=7, tm_hour=7, tm_min=0, tm_sec=1, tm_wday=6, tm_yday=38, tm_isdst=0)
+GPIO setup complete
+sleeping
+watering 180 seconds
+done at: time.struct_time(tm_year=2021, tm_mon=2, tm_mday=7, tm_hour=7, tm_min=3, tm_sec=3, tm_wday=6, tm_yday=38, tm_isdst=0)
+seconds is: 120
+Seconds to run: 120
+Starting run at: time.struct_time(tm_year=2021, tm_mon=2, tm_mday=11, tm_hour=7, tm_min=0, tm_sec=1, tm_wday=3, tm_yday=42, tm_isdst=0)
+GPIO setup complete
+sleeping
+watering 120 seconds
+done at: time.struct_time(tm_year=2021, tm_mon=2, tm_mday=11, tm_hour=7, tm_min=2, tm_sec=4, tm_wday=3, tm_yday=42, tm_isdst=0)
+seconds is: 120
+Seconds to run: 120
+Starting run at: time.struct_time(tm_year=2021, tm_mon=2, tm_mday=13, tm_hour=7, tm_min=0, tm_sec=1, tm_wday=5, tm_yday=44, tm_isdst=0)
+GPIO setup complete
+sleeping
+watering 120 seconds
+done at: time.struct_time(tm_year=2021, tm_mon=2, tm_mday=13, tm_hour=7, tm_min=2, tm_sec=3, tm_wday=5, tm_yday=44, tm_isdst=0)
+seconds is: 120
+Seconds to run: 120
+Starting run at: time.struct_time(tm_year=2021, tm_mon=2, tm_mday=17, tm_hour=7, tm_min=0, tm_sec=2, tm_wday=2, tm_yday=48, tm_isdst=0)
+GPIO setup complete
+sleeping
+watering 120 seconds
+done at: time.struct_time(tm_year=2021, tm_mon=2, tm_mday=17, tm_hour=7, tm_min=2, tm_sec=4, tm_wday=2, tm_yday=48, tm_isdst=0)
+seconds is: 120
+Seconds to run: 120
+Starting run at: time.struct_time(tm_year=2021, tm_mon=2, tm_mday=19, tm_hour=7, tm_min=0, tm_sec=1, tm_wday=4, tm_yday=50, tm_isdst=0)
+GPIO setup complete
+sleeping
+watering 120 seconds
+done at: time.struct_time(tm_year=2021, tm_mon=2, tm_mday=19, tm_hour=7, tm_min=2, tm_sec=3, tm_wday=4, tm_yday=50, tm_isdst=0)
+seconds is: 120
+Seconds to run: 120
+Starting run at: time.struct_time(tm_year=2021, tm_mon=2, tm_mday=21, tm_hour=7, tm_min=0, tm_sec=1, tm_wday=6, tm_yday=52, tm_isdst=0)
+GPIO setup complete
+sleeping
+watering 120 seconds
+done at: time.struct_time(tm_year=2021, tm_mon=2, tm_mday=21, tm_hour=7, tm_min=2, tm_sec=3, tm_wday=6, tm_yday=52, tm_isdst=0)
+seconds is: 150
+Seconds to run: 150
+Starting run at: time.struct_time(tm_year=2021, tm_mon=3, tm_mday=4, tm_hour=7, tm_min=0, tm_sec=1, tm_wday=3, tm_yday=63, tm_isdst=0)
+GPIO setup complete
+sleeping
+watering 150 seconds
+done at: time.struct_time(tm_year=2021, tm_mon=3, tm_mday=4, tm_hour=7, tm_min=2, tm_sec=33, tm_wday=3, tm_yday=63, tm_isdst=0)
+seconds is: 150
+Seconds to run: 150
+Starting run at: time.struct_time(tm_year=2021, tm_mon=3, tm_mday=7, tm_hour=7, tm_min=0, tm_sec=1, tm_wday=6, tm_yday=66, tm_isdst=0)
+GPIO setup complete
+sleeping
+watering 150 seconds
+done at: time.struct_time(tm_year=2021, tm_mon=3, tm_mday=7, tm_hour=7, tm_min=2, tm_sec=34, tm_wday=6, tm_yday=66, tm_isdst=0)
