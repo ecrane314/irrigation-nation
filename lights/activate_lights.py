@@ -17,7 +17,7 @@ import sys
 import RPi.GPIO as GPIO
 
 
-def pump_test(seconds=30):
+def activate_lights(seconds=30):
     """Establish relay pins and run pump for seconds on pin of choice"""
     # record when trial begins
     print("Starting run at: " + str(time.localtime()))
@@ -61,4 +61,4 @@ def pump_test(seconds=30):
 if __name__ == "__main__":
     seconds = int(sys.argv[1])
     print("seconds is: %i" % seconds)
-    pump_test(seconds)
+    activate_lights(seconds)
