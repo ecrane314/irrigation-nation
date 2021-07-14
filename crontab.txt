@@ -1,19 +1,12 @@
 Sample crontab file. Use `crontab -l` or `crontab -e` to view or edit, respectively.
 
 
-**Generate crontab and see samples**
-https://crontab-generator.org/
+# **Generate crontab and see samples**
+#https://crontab-generator.org/
 
-**Validate existing crontabs and see samples**
-https://crontab.guru/
+# **Validate existing crontabs and see samples**
+#https://crontab.guru/
 
-
-Runs every minute for script testing, ensure foo exists as below
-* * * * * /home/pi/foo.py
-	pi@eac-pi:~ $ cat foo.py 
-	#!/usr/bin/env python3
-	x = 5
-	print(x)
 
 
 Run every 3 days at 7 am
@@ -26,3 +19,19 @@ Run each morning at 7am
 
 Run every other day at 7am
 0 7 1-31/2 * * /home/pi/irrigation-nation/operate_pump.py 120
+
+
+# Latest v2
+0 7 1-14/2,17-31/2 * * /home/pi/irrigation-nation/operate_pump.py 180
+0 7 8-31/2 * * /home/pi/irrigation-nation/operate_pump.py 150
+
+
+# ============================
+# Runs every minute, for testing
+
+#* * * * * /home/pi/foo.py 
+#1-14/2,17-31/2 * * * * /home/pi/foo.sh
+
+#pi@eac-pi:~ $ cat foo.sh 
+# date >> /home/pi/scratch.pi
+
