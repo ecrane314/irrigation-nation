@@ -96,5 +96,4 @@ def operate_pump(seconds=60):
 if __name__ == "__main__":
     # function is 0 and argument is 1, python3 not involved
     seconds_input = int(sys.argv[1])
-    logger.info("seconds is: %i", seconds_input)
     operate_pump(seconds_input)
