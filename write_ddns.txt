@@ -5,6 +5,8 @@
 # Harden password and change default user from pi to something else
 #
 
+#  https://serdima.wordpress.com/2018/04/23/tutorial-updating-dynamic-dns-with-ddclient/
+
 #TODO  set daemon to update
 #TODO move out of dhcp space
 
