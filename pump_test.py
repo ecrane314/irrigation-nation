@@ -10,7 +10,7 @@ from time import sleep
 import sys
 import logging
 
-import google.cloud.logging
+#import google.cloud.logging
 import RPi.GPIO as GPIO
 
 
@@ -31,19 +31,16 @@ logger.addHandler(file_handler)
 
 ###  CREATE HANDLER TO WRITE TO GCP CLOUD LOGS  ###
 #create cloud logging client
-try:
-    client = google.cloud.logging.Client.from_service_account_json(\
-        '/home/pi/keys/crane-gcp-pi-water-plants.json')
-
-    #Create cloud handler and set formatter
-    cloud_handler = google.cloud.logging.handlers.CloudLoggingHandler(client)
-    cloud_handler.setFormatter(formatter)
-
-    #add cloud handler
-    logger.addHandler(cloud_handler)
-
-except FileNotFoundError:
-    logger.error('Cloud logger client not established')
+#try:
+#    client = google.cloud.logging.Client.from_service_account_json(\
+#        '/home/pi/keys/crane-gcp-pi-water-plants.json')
+#    #Create cloud handler and set formatter
+#    cloud_handler = google.cloud.logging.handlers.CloudLoggingHandler(client)
+#    cloud_handler.setFormatter(formatter)
+#    #add cloud handler
+#    logger.addHandler(cloud_handler)
+#except FileNotFoundError:
+#    logger.error('Cloud logger client not established')
 
 # Which handlers were setup?
 logger.info("Handlers: %s", logger.handlers)

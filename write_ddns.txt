@@ -1,0 +1,26 @@
+# This will go in /etc/ddclient.conf which must only be editable by root
+# running sudo ddclient will fix the file if permissions off and push new info
+# Remember port forwarding on router gateway or this does nothing
+
+# Harden password and change default user from pi to something else
+#
+
+#  https://serdima.wordpress.com/2018/04/23/tutorial-updating-dynamic-dns-with-ddclient/
+
+#TODO  set daemon to update
+#TODO move out of dhcp space
+
+protocol=dyndns2
+
+use=web
+
+server=domains.google.com
+
+ssl=yes
+
+login=<from registrar ddns config >
+
+password=<from registrar ddns config>
+
+irrigation.evancrane.com
+

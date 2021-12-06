@@ -40,9 +40,17 @@ Host github.com
         AddKeysToAgent yes
         IdentityFile ~/.ssh/github<private key>
 
+## 3. Hardening
+Harden your device by installing simply firewall, updating default user name, hardening password with a computer generated key, setting it's own default IP outside DHCP. Use the (RasPi hardening guide)[https://www.raspberrypi.org/documentation/configuration/security.md]
 
+Firewall https://www.raspberrypi.com/documentation/computers/configuration.html#install-a-firewall  
+Not in use yet but need this
 
+## 4. Install DDNS on your device and enable port forwarding
+Setup Dynamic DNS at your registrar eg domains.google.com, and then write the configuration. Example in write_ddns.txt
 
 ### Additional Credit
 With inspiration from https://www.hackster.io/ben-eagan/raspberry-pi-automated-plant-watering-with-website-8af2dc
 > specifically, the inclusion of flask-based front end
+
+
