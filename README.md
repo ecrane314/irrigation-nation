@@ -44,10 +44,12 @@ Host github.com
 Harden your device by installing simply firewall, updating default user name, hardening password with a computer generated key, setting it's own default IP outside DHCP. Use the (RasPi hardening guide)[https://www.raspberrypi.org/documentation/configuration/security.md]
 
 Firewall https://www.raspberrypi.com/documentation/computers/configuration.html#install-a-firewall  
-Not in use yet but need this
+ufw Uncomplicated Firewall. Need to be sudo to manage, but need only to allow TCP 22 to setup access. Remember, don't expose 22 directly to the internet.
 
 ## 4. Install DDNS on your device and enable port forwarding
 Setup Dynamic DNS at your registrar eg domains.google.com, and then write the configuration. Example in write_ddns.txt
+
+Port map on your router so that your special port reaches the device e.g. 3434 > 22 TCP and perhaps set a static route for the device in case you forget the hostname or are changing it and need to be able to connect.
 
 ### Additional Credit
 With inspiration from https://www.hackster.io/ben-eagan/raspberry-pi-automated-plant-watering-with-website-8af2dc
