@@ -27,13 +27,12 @@ For example
 
 Set system clock of device so that Cron works as expected. On Raspberry Pi, use `sudo system-config` then localization and set time zone. On generic linux, this can be done with `sudo timedatectl show-timezones` and `sudo timedatectl set-timezone <TIMEZONE>``
 
-
+## Github integration [or use Docker]
 `ssh-keygen -t ed25512 -C your@email.com`
 `eval "$(ssh-agent -s)"`
 `ssh-add ~/.ssh/id_rsa` The private key
 Then add the public key to your github account or other
 ensure `git remote -v` shows your remotes as ssh destinatinos and not https else it will ask for username and password, not the key.
-
 
 ~/.ssh/config file should have something like this
 Host github.com
@@ -44,13 +43,21 @@ Host github.com
 Harden your device by installing simply firewall, updating default user name, hardening password with a computer generated key, setting it's own default IP outside DHCP. Use the (RasPi hardening guide)[https://www.raspberrypi.org/documentation/configuration/security.md]
 
 Firewall https://www.raspberrypi.com/documentation/computers/configuration.html#install-a-firewall  
-Not in use yet but need this
+Install ufw 
 
 ## 4. Install DDNS on your device and enable port forwarding
 Setup Dynamic DNS at your registrar eg domains.google.com, and then write the configuration. Example in write_ddns.txt
 
+## 5. Install Docker
+https://docs.docker.com/engine/install/debian/ 
+Use Debian instructions except change the URL for the actual site to Raspbian
+```echo \
+  "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/raspbian \
+  $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+```
+## 6. Install Monitoring Agent [optional]
+This brings CPU, Memory, Disk, Network and syslog all to GCP for central observability
+https://cloud.google.com/monitoring/agent/monitoring/installation 
+
 ### Additional Credit
-With inspiration from https://www.hackster.io/ben-eagan/raspberry-pi-automated-plant-watering-with-website-8af2dc
-> specifically, the inclusion of flask-based front end
-
-
+With explanation & inspiration from https://www.hackster.io/ben-eagan/raspberry-pi-automated-plant-watering-with-website-8af2dc
