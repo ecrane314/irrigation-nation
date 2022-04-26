@@ -3,7 +3,7 @@
 ## Google API
 https://googleapis.dev/python/cloudiot/latest/index.html 
 This is to connect and manage devices IE management control plane NOT device data plane.
-[TODO] Still need to write APIs for that?
+[TODO] Still need to write APIs for that? Should be client library - HTTP
 [TODO] Python requests library
 
 
@@ -11,7 +11,7 @@ This is to connect and manage devices IE management control plane NOT device dat
 Digital plant watering system based on Raspberry Pi.
 
 ## 1. Install Requirements
-#in case you're missing pip
+In case you're missing pip
 `sudo apt install python3-pip`
 `pip3 install -r requirements.txt`
 ## Run Flask (Optional)
@@ -19,13 +19,10 @@ Digital plant watering system based on Raspberry Pi.
 
 ## 2. Add Scheduler
 `crontab -e`
-`/usr/bin/python3 <absolute path to pump_test.py`
-https://crontab-generator.org/ for setting your timing
-For example
-`0 7 * * * /usr/bin/python3 /home/pi/irrigation-nation/operate_pump.py 120 > /home/pi/log.out` Will run each morning at 7am for 120 seconds.
-`0 7 1-31/2 * * /usr/bin/python3 /home/pi/irrigation-nation/operate_pump.py 120 > /home/pi/log.out` Will run every other morning at 7am.
-
-Set system clock of device so that Cron works as expected. On Raspberry Pi, use `sudo system-config` then localization and set time zone. On generic linux, this can be done with `sudo timedatectl show-timezones` and `sudo timedatectl set-timezone <TIMEZONE>``
+`0 7 2-30/2 * * /home/pi/irrigation-nation/operate_pump.py 120`
+https://crontab-generator.org/ for setting and validating your timing
+For example, the above will run each morning at 7am for 120 seconds.
+Run date to confirm timezone is accurate. Set system clock of device so that Cron works as expected. On Raspberry Pi, use `sudo system-config` then localization and set time zone. On generic linux, this can be done with `sudo timedatectl show-timezones` and `sudo timedatectl set-timezone <TIMEZONE>``
 
 ## Github integration [or use Docker]
 `ssh-keygen -t ed25512 -C your@email.com`
@@ -40,11 +37,11 @@ Host github.com
         IdentityFile ~/.ssh/github<private key>
 
 ## 3. Hardening
-Harden your device by installing simply firewall, updating default user name, hardening password with a computer generated key, setting it's own default IP outside DHCP. Use the (RasPi hardening guide)[https://www.raspberrypi.org/documentation/configuration/security.md]
+Harden your device by installing simply firewall, updating default user name, hardening password with a computer generated key, setting it's own default IP outside DHCP. Use the [RasPi guide](https://www.raspberrypi.org/documentation/configuration/security.md)
 
-Firewall https://www.raspberrypi.com/documentation/computers/configuration.html#install-a-firewall  
+[Firewall](https://www.raspberrypi.com/documentation/computers/configuration.html#install-a-firewall )
 
-ufw Uncomplicated Firewall. Need to be sudo to manage, but need only to allow TCP 22 to setup access. Remember, don't expose 22 directly to the internet.
+`ufw` Uncomplicated Firewall. Need to be sudo to manage, but need only to allow TCP 22 to setup access. Remember, don't expose 22 directly to the internet.
 
 ## 4. Install DDNS on your device and enable port forwarding
 Setup Dynamic DNS at your registrar eg domains.google.com, and then write the configuration. Example in write_ddns.txt
