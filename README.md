@@ -1,16 +1,16 @@
 [WIP] https://guides.github.com/features/mastering-markdown/ 
 
-## Google API
+## Google IoT API [optional]
 https://googleapis.dev/python/cloudiot/latest/index.html 
 This is to connect and manage devices IE management control plane NOT device data plane.
 [TODO] Still need to write APIs for that? Should be client library - HTTP
 [TODO] Python requests library
 
-
 # Irrigation Nation
 Digital plant watering system based on Raspberry Pi.
 
 ## 1. Install Requirements
+First, run the commands in `write_raspbian_instructions.md` to prepare your SD card to boot.
 In case you're missing pip
 `sudo apt install python3-pip`
 `pip3 install -r requirements.txt`
@@ -37,9 +37,7 @@ Host github.com
         IdentityFile ~/.ssh/github<private key>
 
 ## 3. Hardening
-Harden your device by installing simply firewall, updating default user name, hardening password with a computer generated key, setting it's own default IP outside DHCP. Use the [RasPi guide](https://www.raspberrypi.org/documentation/configuration/security.md)
-
-[Firewall](https://www.raspberrypi.com/documentation/computers/configuration.html#install-a-firewall )
+Harden your pi by installing uncomplicated firewall, updating default user name, hardening password, and more. Set your routers dhcp to assign it a specific address (often outside DHCP range) so that you can still ssh even while the hostname is changing in local DNS cache. Use the [RasPi Security Guide](https://www.raspberrypi.com/documentation/computers/configuration.html#securing-your-raspberry-pi)
 
 `ufw` Uncomplicated Firewall. Need to be sudo to manage, but need only to allow TCP 22 to setup access. Remember, don't expose 22 directly to the internet.
 

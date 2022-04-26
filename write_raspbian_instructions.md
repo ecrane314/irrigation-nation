@@ -29,6 +29,8 @@ network={
  psk="<Password for your wireless LAN>"
 }
 ```
+## Add a user
+See link above about headless setup. In the latest releases, April 2022 [pi default use is removed](https://www.raspberrypi.com/news/raspberry-pi-bullseye-update-april-2022/)
 
 ## Post boot
 Check this file after booting. Remove plaintext passwords if encoded version is there
