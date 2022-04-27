@@ -59,5 +59,9 @@ Use Debian instructions except change the URL for the actual site to Raspbian
 This brings CPU, Memory, Disk, Network and syslog all to GCP for central observability
 https://cloud.google.com/monitoring/agent/monitoring/installation 
 
+## Hardware
+[Raspi Pinout](https://pinout.xyz/)
+
+
 ### Additional Credit
 With explanation & inspiration from https://www.hackster.io/ben-eagan/raspberry-pi-automated-plant-watering-with-website-8af2dc

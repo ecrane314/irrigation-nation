@@ -32,7 +32,9 @@ network={
 ## Add a user
 See link above about headless setup. In the latest releases, April 2022 [pi default use is removed](https://www.raspberrypi.com/news/raspberry-pi-bullseye-update-april-2022/)
 
+`vim userconf.txt` and add `<username>:<encrypted password>`. You can get the encrypted version with OpenSSL in Linux, (MacOS openSSL is different) `echo 'my password' | openssl passwd -6 -stdin`. GCP CloudShell works great for this.
+
 ## Post boot
-Check this file after booting. Remove plaintext passwords if encoded version is there
+Check this file after booting and ssh'ing in. Remove plaintext passwords if encoded version is there
 
 `vim /etc/wpa_supplicant/wpa_supplicant.conf`
