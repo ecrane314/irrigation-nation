@@ -1,6 +1,7 @@
-from python:3
+FROM python:3.8-slim-bullseye
 
-add . .
-run pip install -r requirements.txt
+ADD . .
+RUN pip install -r requirements.txt
 
-cmd pip freeze
+#CMD pip freeze
+CMD ls
