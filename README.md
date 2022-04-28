@@ -11,9 +11,9 @@ Digital plant watering system based on Raspberry Pi.
 
 ## 1. Install Requirements
 First, run the commands in `write_raspbian_instructions.md` to prepare your SD card to boot.
-In case you're missing pip
-`sudo apt install python3-pip`
-`pip3 install -r requirements.txt`
+In the likely event you're missing pip on a lite install, 
+`sudo apt install python3-pip`. Notice this catches a bunch of other recommended Python packages along with it. 27MB at time of writing Apr 2022. Then, clone this repo and run `pip3 install -r requirements.txt`.
+
 ## Run Flask (Optional)
 `export FLASK_APP=web_plants.py; flask run`
 
@@ -39,7 +39,7 @@ Host github.com
 ## 3. Hardening
 Harden your pi by installing uncomplicated firewall, updating default user name, hardening password, and more. Set your routers dhcp to assign it a specific address (often outside DHCP range) so that you can still ssh even while the hostname is changing in local DNS cache. Use the [RasPi Security Guide](https://www.raspberrypi.com/documentation/computers/configuration.html#securing-your-raspberry-pi)
 
-`ufw` Uncomplicated Firewall. Need to be sudo to manage, but need only to allow TCP 22 to setup access. Remember, don't expose 22 directly to the internet.
+`ufw` Uncomplicated Firewall. Need to be sudo to manage, but need only to allow TCP 22 to setup access. Remember, don't expose 22 directly to the internet. `sudo ufw allow 22/tcp` and `sudo ufw enable`. `sudo ufw status`
 
 ## 4. Install DDNS on your device and enable port forwarding
 Setup Dynamic DNS at your registrar eg domains.google.com, and then write the configuration. Example in write_ddns.txt

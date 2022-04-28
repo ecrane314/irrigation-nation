@@ -34,16 +34,15 @@ logger.addHandler(file_handler)
 try:
     client = google.cloud.logging.Client.from_service_account_json(\
         '/home/pi/keys/crane-gcp-pi-water-plants.json')
-
     #Create cloud handler and set formatter
     cloud_handler = google.cloud.logging.handlers.CloudLoggingHandler(client)
     cloud_handler.setFormatter(formatter)
-
     #add cloud handler
     logger.addHandler(cloud_handler)
-
 except FileNotFoundError:
     logger.error('Cloud logger client not established')
+except NameError:
+    logger.error('Cloud logging library not found')
 
 # Which handlers were setup?
 logger.info("Handlers: %s", logger.handlers)
