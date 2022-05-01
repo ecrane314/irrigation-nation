@@ -41,6 +41,8 @@ Harden your pi by installing uncomplicated firewall, updating default user name,
 
 `ufw` Uncomplicated Firewall. Need to be sudo to manage, but need only to allow TCP 22 to setup access. Remember, don't expose 22 directly to the internet. `sudo ufw allow 22/tcp` and `sudo ufw enable`. `sudo ufw status`
 
+Use ssh-keygen to create a key pair and copy your public key with format `ssh-rsa <pub key> user@host` to the ~/.ssh/authorized_keys file on the pi.
+
 ## 4. Install DDNS on your device and enable port forwarding
 Setup Dynamic DNS at your registrar eg domains.google.com, and then write the configuration. Example in write_ddns.txt
 
