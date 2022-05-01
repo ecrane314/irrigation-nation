@@ -61,6 +61,9 @@ Use Debian instructions except change the URL for the actual site to Raspbian
 This brings CPU, Memory, Disk, Network and syslog all to GCP for central observability
 https://cloud.google.com/monitoring/agent/monitoring/installation 
 
+## Troubleshooting
+I used the pre-installed `iwconfig` to check the number of retries, link quality, and link speed when packages were timing out coming down from `pip`. I also use the Speedtest.net CLI version to check my internet end-to-end connectivity. [Ookla CLI](https://www.speedtest.net/apps/cli). It turns out moving a metal broom handle and the surge protector cable further from the pi improved dramatically 5 Mbps to 60 Mbps.
+
 ## Hardware
 [Raspi Pinout](https://pinout.xyz/)
 
