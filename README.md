@@ -46,6 +46,8 @@ Setup Dynamic DNS at your registrar eg domains.google.com, and then write the co
 
 Port map on your router so that your special port reaches the device e.g. 3434 > 22 TCP and perhaps set a static route for the device in case you forget the hostname or are changing it and need to be able to connect.
 
+To disable ipv6 on adapters, `sudo nano /etc/sysctl.conf` and add line `net.ipv6.conf.default.disable_ipv6=1` 
+
 
 ## 5. Install Docker
 https://docs.docker.com/engine/install/debian/ 
@@ -58,12 +60,14 @@ Use Debian instructions except change the URL for the actual site to Raspbian
 ## 6. Install Monitoring Agent [optional]
 This brings CPU, Memory, Disk, Network and syslog all to GCP for central observability
 https://cloud.google.com/monitoring/agent/monitoring/installation 
+As of May 4, not built and available for arm64 architecture. The folders are present in the repo, but empty. Remember to add `[arch=arm64]` in the `/etc/apt/sources` listing file.
 
 ## Troubleshooting
 I used the pre-installed `iwconfig` to check the number of retries, link quality, and link speed when packages were timing out coming down from `pip`. I also use the Speedtest.net CLI version to check my internet end-to-end connectivity. [Ookla CLI](https://www.speedtest.net/apps/cli). It turns out moving a metal broom handle and the surge protector cable further from the pi improved dramatically 5 Mbps to 60 Mbps.
 
 ## Hardware
 [Raspi Pinout](https://pinout.xyz/)
+For the [Sense Hat](https://pythonhosted.org/sense-hat/), use the raspi package instead of pip to install, `sudo apt-get install sense-hat`
 
 
 ### Additional Credit
