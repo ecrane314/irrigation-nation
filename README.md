@@ -25,9 +25,14 @@ For example, the above will run each morning at 7am for 120 seconds.
 Run date to confirm timezone is accurate. Set system clock of device so that Cron works as expected. On Raspberry Pi, use `sudo system-config` then localization and set time zone. On generic linux, this can be done with `sudo timedatectl show-timezones` and `sudo timedatectl set-timezone <TIMEZONE>``
 
 ## Github integration [or use Docker]
-`ssh-keygen -t ed25512 -C your@email.com`
+[GitHub SSH instructions are helpful](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)
+
+`ssh-keygen -t ed25519 -C your@email.com`
+
 `eval "$(ssh-agent -s)"`
+
 `ssh-add ~/.ssh/id_rsa` The private key
+
 Then add the public key to your github account or other
 ensure `git remote -v` shows your remotes as ssh destinatinos and not https else it will ask for username and password, not the key.
 
