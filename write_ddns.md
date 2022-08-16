@@ -1,5 +1,11 @@
 # Dynamic DNS for remote access
-This will go in `/etc/ddclient.conf` which must only be editable by root. Running `sudo ddclient` will fix the file if permissions are off and push new info to remote.
+This will go in `/etc/ddclient.conf` which must only be editable by root. Running `sudo ddclien -verbose` will fix the file if permissions are off, check your ip, and push new info to remote registrar IF different.
+
+## Install
+
+`sudo apt install ddclient`
+
+You will most likely want it to run in the background and periodically check/update your IP without manual intervention. To do that, you need to configure ddclient to run as daemon by editing the file `/etc/default/ddclient`.
 
 ## Port Forwarding
 Remember port forwarding on router gateway or this does nothing
