@@ -44,9 +44,13 @@ Host github.com
 ## 3. Hardening
 Harden your pi by installing uncomplicated firewall, updating default user name, hardening password, and more. Set your routers dhcp to assign it a specific address (often outside DHCP range) so that you can still ssh even while the hostname is changing in local DNS cache. Use the [RasPi Security Guide](https://www.raspberrypi.com/documentation/computers/configuration.html#securing-your-raspberry-pi)
 
-`ufw` Uncomplicated Firewall. Need to be sudo to manage, but need only to allow TCP 22 to setup access. Remember, don't expose 22 directly to the internet. `sudo ufw allow 22/tcp` and `sudo ufw enable`. `sudo ufw status`
+Create your key as above. 
 
-Use ssh-keygen to create a key pair and copy your public key with format `ssh-rsa <pub key> user@host` to the ~/.ssh/authorized_keys file on the pi.
+Run `ssh-copy-id -i ~/.ssh/id_rsa.pub user@remote-host` and you'll be prompted for a password to copy your public key to the authorized_hosts file of the pi.
+
+On the local machine, run `ssh-agent $SHELL` to start the agent and `ssh-add <key>` to add your key. From here, you can ssh without a password.
+
+`ufw` Uncomplicated Firewall. Need to be sudo to manage, but need only to allow TCP 22 to setup access. Remember, don't expose 22 directly to the internet. `sudo ufw allow 22/tcp` and `sudo ufw enable`. `sudo ufw status`
 
 ## 4. Install DDNS on your device and enable port forwarding
 Setup Dynamic DNS at your registrar eg domains.google.com, and then write the configuration. Example in write_ddns.txt
