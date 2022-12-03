@@ -83,3 +83,23 @@ For the [Sense Hat](https://pythonhosted.org/sense-hat/), use the raspi package 
 
 ### Additional Credit
 With explanation & inspiration from https://www.hackster.io/ben-eagan/raspberry-pi-automated-plant-watering-with-website-8af2dc
+
+
+# Future
+
+Dockerfile for water plants
+
+```
+from python-3 . Lite?
+sudo apt update && sudo apt upgrade
+sudo apt install git ufw
+pip install -r requirements.txt
+add .
+
+.sh shell script to install ufw, configure, 
+ddns // Needs to pull in config at runtime as has password in it
+// GCP service account?
+
+CMD python operate-pump.py
+
+```
