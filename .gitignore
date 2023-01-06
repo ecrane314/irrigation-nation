@@ -4,3 +4,5 @@ scripts/last_watered
 *.log
 .DS_Store
 */.DS_Store
+
+*.config
