@@ -25,9 +25,14 @@ For example, the above will run each morning at 7am for 120 seconds.
 Run date to confirm timezone is accurate. Set system clock of device so that Cron works as expected. On Raspberry Pi, use `sudo system-config` then localization and set time zone. On generic linux, this can be done with `sudo timedatectl show-timezones` and `sudo timedatectl set-timezone <TIMEZONE>``
 
 ## Github integration [or use Docker]
-`ssh-keygen -t ed25512 -C your@email.com`
+[GitHub SSH instructions are helpful](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)
+
+`ssh-keygen -t ed25519 -C your@email.com`
+
 `eval "$(ssh-agent -s)"`
+
 `ssh-add ~/.ssh/id_rsa` The private key
+
 Then add the public key to your github account or other
 ensure `git remote -v` shows your remotes as ssh destinatinos and not https else it will ask for username and password, not the key.
 
@@ -39,9 +44,13 @@ Host github.com
 ## 3. Hardening
 Harden your pi by installing uncomplicated firewall, updating default user name, hardening password, and more. Set your routers dhcp to assign it a specific address (often outside DHCP range) so that you can still ssh even while the hostname is changing in local DNS cache. Use the [RasPi Security Guide](https://www.raspberrypi.com/documentation/computers/configuration.html#securing-your-raspberry-pi)
 
-`ufw` Uncomplicated Firewall. Need to be sudo to manage, but need only to allow TCP 22 to setup access. Remember, don't expose 22 directly to the internet. `sudo ufw allow 22/tcp` and `sudo ufw enable`. `sudo ufw status`
+Create your key as above. 
 
-Use ssh-keygen to create a key pair and copy your public key with format `ssh-rsa <pub key> user@host` to the ~/.ssh/authorized_keys file on the pi.
+Run `ssh-copy-id -i ~/.ssh/id_rsa.pub user@remote-host` and you'll be prompted for a password to copy your public key to the authorized_hosts file of the pi.
+
+On the local machine, run `ssh-agent $SHELL` to start the agent and `ssh-add <key>` to add your key. From here, you can ssh without a password.
+
+`ufw` Uncomplicated Firewall. Need to be sudo to manage, but need only to allow TCP 22 to setup access. Remember, don't expose 22 directly to the internet. `sudo ufw allow 22/tcp` and `sudo ufw enable`. `sudo ufw status`
 
 ## 4. Install DDNS on your device and enable port forwarding
 Setup Dynamic DNS at your registrar eg domains.google.com, and then write the configuration. Example in write_ddns.txt
@@ -74,3 +83,23 @@ For the [Sense Hat](https://pythonhosted.org/sense-hat/), use the raspi package 
 
 ### Additional Credit
 With explanation & inspiration from https://www.hackster.io/ben-eagan/raspberry-pi-automated-plant-watering-with-website-8af2dc
+
+
+# Future
+
+Dockerfile for water plants
+
+```
+from python-3 . Lite?
+sudo apt update && sudo apt upgrade
+sudo apt install git ufw
+pip install -r requirements.txt
+add .
+
+.sh shell script to install ufw, configure, 
+ddns // Needs to pull in config at runtime as has password in it
+// GCP service account?
+
+CMD python operate-pump.py
+
+```

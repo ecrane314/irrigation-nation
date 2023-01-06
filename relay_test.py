@@ -8,9 +8,10 @@ import time
 # I'm using SenseHat, so I avoid these six https://pinout.xyz/pinout/sense_hat 
 # and avoid board pins 27 and 28 as they are hat identification pins
 # set GPIO numbering mode and define output pins
-# GPIO.BCM or GPIO.BOARD are valid numbering modes
+# GPIO.BCM or GPIO.BOARD are valid numbering modes.
+# Using 16,19,20,21 for physical board pins 36,35,38,40
 GPIO.setmode(GPIO.BCM)
-PINS=[16,20,21,19]
+PINS=[16,19,20,21]
 
 # setup pins as output and set them high since they activate on low
 for i in PINS:
