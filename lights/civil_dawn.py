@@ -14,7 +14,9 @@ import sys
 import logging
 
 #TODO import argparse #for lat lng
-from datetime import datetime, timezone
+# Is datetime a module within a package by the same name?
+from datetime import datetime
+from dateutil import tz
 
 import requests
 
@@ -29,7 +31,7 @@ def get_solar_data(lat=30.267238, lng=-97.755202):
     # Define request, includes lat and long, formatting off here
     request_body = "https://api.sunrise-sunset.org/json?\
 lat=%f&lng=%f&formatted=0" % (lat, lng)
-    logger.info("Request body: " + request_body)
+    #logger.info("Request body: " + request_body)
 
     # Get and return response
     response = requests.get(request_body)
@@ -38,7 +40,7 @@ lat=%f&lng=%f&formatted=0" % (lat, lng)
     return response.content
 
 
-def extract_phase(phase_data, phase="sunset"):
+def extract_phase(phase_data, phase="civil_twilight_begin"):
     """Extract a particular phase from the JSON API response"""
     #loads json response to dict with phases
     parsed = json.loads(phase_data)
@@ -46,37 +48,37 @@ def extract_phase(phase_data, phase="sunset"):
     #return phase
     try:
         #TODO return with time zone shift for system time.
+        logger.info("Extracting: " + phase)
         return parsed["results"][phase]
     except KeyError:
         print("No phase named: " + phase)
         return None
 
 
-def utc_to_local(utc_dt):
-    """BROKEN, Convert UTC time to local time"""
+def utc_to_local(utc_stamp):
+    """Convert ISO 8601 UTC time to formatted local time"""
     # Sample datetime 2021-03-01T00:29:45+00:00
-    #TODO Fixme
-    return utc_dt.replace(tzinfo=timezone.utc).astimezone(timezo=None)
-
-
-def as_timezone(self, timezo):
-    """SCRATCH, unclear what's happening here"""
-    if self.tzinfo is timezo:
-        return self
     
-    # Convert self to UTC, and attach the new time zone object.
-    utc = (self - self.utcoffset()).replace(tzinfo=timezo)
-    
-    # Convert from UTC to timezo's local time.
-    return timezo.fromutc- Starting (utc)
+    dt = datetime.fromisoformat(utc_stamp)
+
+    # Create utc timezone object in current ds phase
+    utc_timezone = tz.tzutc()
+    dt = dt.replace(tzinfo=utc_timezone)
+
+    # Print as local
+    local_timezone = tz.tzlocal()
+
+    return dt.astimezone(local_timezone)
 
 
 if __name__ == "__main__":
     try:
         user_phase = sys.argv[1]
         logger.info("Phase Selected: " + user_phase)
-        print(extract_phase(get_solar_data(), phase=user_phase))
-        
+        utc_stamp = extract_phase(get_solar_data(), phase=user_phase)
+        print(utc_stamp)
+        print(utc_to_local(utc_stamp))
+
     except IndexError:
-        print("=== Exception loop! ===")
+        logger.error("No phase specified")
         print(extract_phase(get_solar_data()))
